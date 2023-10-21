@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: #0b1e27;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .spinner-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .spinning-star {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            animation: spin 3.5s linear infinite;
+        }
+
+        .star {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #ff5733;
+            clip-path: polygon(50% 0%, 61.8% 38.2%, 100% 50%, 61.8% 61.8%, 50% 100%, 38.2% 61.8%, 0% 50%, 38.2% 38.2%);
+            animation: sparkle 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes sparkle {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.2);
+                opacity: 0.5;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="spinner-container">
+        <div class="spinning-star">
+            <div class="star"></div>
+            <div class="star" style="transform: rotate(72deg);"></div>
+            <div class="star" style="transform: rotate(144deg);"></div>
+            <div class="star" style="transform: rotate(216deg);"></div>
+            <div class="star" style="transform: rotate(288deg);"></div>
+        </div>
+    </div>
+</body>
+
+</html>
